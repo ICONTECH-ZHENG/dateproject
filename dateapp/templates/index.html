@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+<h1>{{HeadName}}</h1>
+<p1>Enter a date below and submit and we will find the day of the week.</p1><br>
+
+<form action="" method="GET">
+
+  <input type="date" placeholder=" " name="userdate">
+  <input type="submit" value="Submit">
+
+</form>
+
+
+  <hr>
+    {% if inputdate %}
+    <h2>Pick Date:</h2>
+    <div>{{inputdate}}</div>
+     {% endif %}
+
+{% endblock %}
