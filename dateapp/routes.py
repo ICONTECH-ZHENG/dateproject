@@ -8,33 +8,33 @@ from dateapp import app
 
 @app.route('/', methods=['Get'])
 def index():
-    input_date = None
-    output_day = None
+    inputdate = None
+    outputday = None
     if request.args:
-        input_date = request.args.get('datetime')
-    if input_date:
-        day = str(input_date)
+        inputdate = request.args.get('datetime')
+    if inputdate:
+        day = str(inputdate)
         month, day, year = (int(x) for x in day.split('/'))
-        output_day = datetime.date(year, month, day).weekday()
-        if output_day == 0:
-            output_day="Monday"
-        elif output_day == 1:
-            output_day="Tuesday"
-        elif output_day == 2:
-            output_day="Wednesday"
-        elif output_day == 3:
-            output_day="Thursday"
-        elif output_day == 4:
-            output_day="Friday"
-        elif output_day == 5:
-            output_day="Saturday"
+        outputday = datetime.date(year, month, day).weekday()
+        if outputday == 0:
+            outputday="Monday"
+        elif outputday == 1:
+            outputday="Tuesday"
+        elif outputday == 2:
+            outputday="Wednesday"
+        elif outputday == 3:
+            outputday="Thursday"
+        elif outputday == 4:
+            outputday="Friday"
+        elif outputday == 5:
+            outputday="Saturday"
         else:
-            output_day="Sunday"
+            outputday="Sunday"
 
     else:
-        input_date = "Please submit the date above."
+        inputdate = "Please submit the date above."
     return render_template("index.html",
-                           input_date = input_date,
-                           output_day = output_day,
+                           inputdate = inputdate,
+                           outputday = outputday,
                            page_title="Day of The Week Calculator")
 
