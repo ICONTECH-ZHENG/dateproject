@@ -32,7 +32,7 @@ def index():
             outputDay="Sunday"
 
     else:
-        inputDate = "Please Submit A Date!"
+        inputDate = " "
     return render_template("index.html",
                            inputDate = inputDate,
                            outputDay = outputDay,
