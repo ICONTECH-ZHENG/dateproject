@@ -30,5 +30,10 @@ def index():
         else:
             output_day="Sunday"
         
-     
+     else:
+        input_day = "Please submit the date above."
+     return render_template("index.html",)
+                            input_date = input_date,
+                            output_day = output_day,
+                            page_title="Day of The Week Calculator")
             
