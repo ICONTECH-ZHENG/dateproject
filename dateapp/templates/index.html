@@ -1,23 +1,21 @@
 {% extends "base.html" %}
 
-
 {% block body %}
 
-<h1>{{HeadName}}</h1>
-<p1>Enter a date below and submit and we will find the day of the week.</p1><br>
+<div class="container">
+  <h1>Weekly Date Calculator</h1>
+  <p>Please Choose a date</p>
+  <form action="/" method="GET">
+    <input type="date" required name="datetime" placeholder="mm/dd/yy">
+    <input type="Submit" value ="submit">
+  </form>
+</div>
 
-<form action="" method="GET">
+   {% if input_date %}
 
-  <input type="date" placeholder=" " name="userdate">
-  <input type="submit" value="Submit">
+   <h2>The weekly date is:</h2>
+   {{output_day}}
 
-</form>
-
-
-  <hr>
-    {% if inputdate %}
-    <h2>Pick Date:</h2>
-    <div>{{inputdate}}</div>
-     {% endif %}
+    {% endif %}
 
 {% endblock %}
