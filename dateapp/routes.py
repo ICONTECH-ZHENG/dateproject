@@ -5,13 +5,14 @@ from flask import render_template
 from dateapp import app
 
 
-@app.route('/', methods=['GET'])
+
+@app.route('/', methods=['Get'])
 def index():
     input_date = None
-    input_dat= None
+    output_day = None
     if request.args:
-        input_date =request.args.get('datetime')
-    if input_dat:
+        input_date = request.args.get('datetime')
+    if input_date:
         day = str(input_date)
         month, day, year = (int(x) for x in day.split('/'))
         output_day = datetime.date(year, month, day).weekday()
@@ -29,11 +30,11 @@ def index():
             output_day="Saturday"
         else:
             output_day="Sunday"
-        
-     else:
-        input_day = "Please submit the date above."
-     return render_template("index.html",)
-                            input_date = input_date,
-                            output_day = output_day,
-                            page_title="Day of The Week Calculator")
-            
+
+    else:
+        input_date = "Please submit the date above."
+    return render_template("index.html",
+                           input_date = input_date,
+                           output_day = output_day,
+                           page_title="Day of The Week Calculator")
+
