@@ -16,21 +16,34 @@ def index():
         day = str(inputDate)
         month, day, year = (int(x) for x in day.split('/'))
         outputDay = datetime.date(year, month, day).weekday()
+        
         if outputDay == 0:
-            outputDay="Monday"
+           outputDay="Monday"
+           print(outputDay)
+    
         elif outputDay == 1:
-            outputDay="Tuesday"
+             outputDay="Tuesday"
+             print(outputDay)
+        
         elif outputDay == 2:
-            outputDay="Wednesday"
+             outputDay="Wednesday"
+             print(outputDay)
+        
         elif outputDay == 3:
-            outputDay="Thursday"
+             outputDay="Thursday"
+             print(outputDay)
+    
         elif outputDay == 4:
-            outputDay="Friday"
+             outputDay="Friday"
+             print(outputDay)
+        
         elif outputDay == 5:
-            outputDay="Saturday"
+             outputDay="Saturday"
+             print(outputDay)
+        
         else:
             outputDay="Sunday"
-
+            print(outputDay)
     else:
         inputDate = " "
     return render_template("index.html",
